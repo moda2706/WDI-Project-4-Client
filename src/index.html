@@ -9,7 +9,33 @@
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body>
-    {{ 1 + 1 }}
-  </body>
+<body ng-controller="MainCtrl as main">
+  <div class="page-wrap">
+    <nav>
+      <ul>
+        <li ng-hide="main.user">
+          <a ui-sref="register">Sign Up</a>
+        </li>
+        <li ng-hide="main.user">
+          <a ui-sref="login">Login</a>
+        </li>
+        <li ng-show="main.user" class="logout-button">
+          <a ng-click="main.logout()">Logout</a>
+        </li>
+        <li ng-show="main.user">
+          <a ui-sref="usersProfile">Profile</a>
+        </li>
+        <li ng-show="main.user">
+          <a ui-sref="groupsIndex">All Groups</a>
+        </li>
+      </ul>
+    </nav>
+    <div ng-show="main.user" class="topNavBlock">
+      <a ui-sref="dashboard">
+        <img class="singed-in-logo" src="images/logo-signed-in.png">
+      </a>
+    </div>
+    <main ui-view></main>
+  </div>
+</body>
 </html>
