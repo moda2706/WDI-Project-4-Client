@@ -46,6 +46,30 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: '/js/views/users/new.html',
     controller: 'UsersNewCtrl',
     controllerAs: 'usersNew'
+  })
+  .state('tripsIndex', {
+    url: '/trips',
+    templateUrl: '/js/views/trips/index.html',
+    controller: 'TripsIndexCtrl',
+    controllerAs: 'tripsIndex'
+  })
+  .state('tripsEdit', {
+    url: '/trips/:id/edit',
+    templateUrl: '/js/views/trips/edit.html',
+    controller: 'TripsEditCtrl',
+    controllerAs: 'tripsEdit'
+  })
+  .state('tripsNew', {
+    url: '/trips/new',
+    templateUrl: '/js/views/trips/new.html',
+    controller: 'TripsNewCtrl',
+    controllerAs: 'tripsNew'
+  })
+  .state('tripsShow', {
+    url: '/trips/:id',
+    templateUrl: '/js/views/trips/show.html',
+    controller: 'TripsShowCtrl',
+    controllerAs: 'tripsShow'
   });
 
   $urlRouterProvider.otherwise('/');
