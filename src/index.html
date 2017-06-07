@@ -9,9 +9,11 @@
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-<body ng-controller="MainCtrl as main">
+<!-- <body ng-controller="MainCtrl as main"> -->
+<body ui-view>
+  <h1>Working</h1>
   <div class="page-wrap">
-    <nav>
+     <nav>
       <ul>
         <li ng-hide="main.user">
           <a ui-sref="register">Sign Up</a>

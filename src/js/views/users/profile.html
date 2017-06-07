@@ -1,0 +1,22 @@
+<div class="container">
+<!-- <div class="row ">
+  <h1>Users list</h1>
+  <ul>
+  <li ng-repeat="user in vm.users track by $index">{{ user.username }}</li>
+  <li ng-repeat="user in vm.users track by $index">{{ user.bio }}</li>
+</ul>
+</div> -->
+<div class="row">
+  <h2>Users near you</h2>
+  <div ng-repeat="user in vm.users">
+    <div class="col-md-4 col-s-6">
+      <img class="" ng-src="{{user.image}}" ui-sref="userShow({ id: user.id })">
+      <h4><a class="" ui-sref="usersShow({ id: user.id })">{{ user.username }}</a></h4>
+      <div class="">
+        <!-- <a ui-sref="usersShow({ id: user.id })"></a> -->
+        <p>{{ user.bio}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
