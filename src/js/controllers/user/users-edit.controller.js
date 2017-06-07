@@ -2,17 +2,17 @@ angular
 .module('Wanderpal')
 .controller('UsersEditCtrl', UsersEditCtrl);
 
-UsersEditCtrl.$inject = ['User', '$state', 'TokenService', 'CurrentUserService'];
+UsersEditCtrl.$inject = ['UserFactory', '$state', 'TokenService', 'CurrentUserService'];
 
-function UsersEditCtrl(User, $state, TokenService, CurrentUserService) {
+function UsersEditCtrl(UserFactory, $state, TokenService, CurrentUserService) {
   const vm = this;
 
-  vm.user = User.get({ id: TokenService.decodeToken().id });
+  vm.user = UserFactory.get({ id: TokenService.decodeToken().id });
 
   vm.update = usersUpdate;
 
   function usersUpdate() {
-    User
+    UserFactory
     .update({ id: vm.user.id }, vm.user)
     .$promise
     .then(user => {

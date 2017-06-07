@@ -2,9 +2,9 @@ angular
   .module('Wanderpal')
   .controller('UsersProfileCtrl', UsersProfileCtrl);
 
-UsersProfileCtrl.$inject = ['User', 'TokenService'];
-function UsersProfileCtrl(User, TokenService) {
+UsersProfileCtrl.$inject = ['UserFactory'];
+function UsersProfileCtrl(UserFactory) {
   const vm = this;
 
-  vm.user = User.get({ id: TokenService.decodeToken().id });
+  vm.user = UserFactory.query();
 }

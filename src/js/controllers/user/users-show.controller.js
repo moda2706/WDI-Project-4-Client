@@ -2,10 +2,10 @@ angular
 .module('Wanderpal')
 .controller('UsersShowCtrl', UsersShowCtrl);
 
-UsersShowCtrl.$inject = ['$stateParams', 'User'];
+UsersShowCtrl.$inject = ['$stateParams', 'UserFactory'];
 
-function UsersShowCtrl($stateParams, User) {
+function UsersShowCtrl($stateParams, UserFactory) {
   const vm = this;
   // $stateParams returns a resource but nothing inside
-  vm.user  = User.get($stateParams);
+  vm.user  = UserFactory.get($stateParams);
 }
