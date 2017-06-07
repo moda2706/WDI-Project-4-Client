@@ -10,10 +10,9 @@
     <!-- endinject -->
   </head>
 <!-- <body ng-controller="MainCtrl as main"> -->
-<body ui-view>
-  <h1>Working</h1>
-  <div class="page-wrap">
-     <nav>
+<body ng-controller="MainCtrl as main">
+  <div>
+    <nav>
       <ul>
         <li ng-hide="main.user">
           <a ui-sref="register">Sign Up</a>
@@ -28,15 +27,15 @@
           <a ui-sref="usersProfile">Profile</a>
         </li>
         <li ng-show="main.user">
-          <a ui-sref="groupsIndex">All Groups</a>
+          <a ui-sref="countriesShow">Countries</a>
         </li>
       </ul>
     </nav>
-    <div ng-show="main.user" class="topNavBlock">
+    <!-- <div ng-show="main.user" class="topNavBlock">
       <a ui-sref="dashboard">
         <img class="singed-in-logo" src="images/logo-signed-in.png">
       </a>
-    </div>
+    </div> -->
     <main ui-view></main>
   </div>
 </body>

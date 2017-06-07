@@ -1,3 +1,10 @@
 <h1>Countries</h1>
 
-{{ countriesIndex.countries }}
+<!-- {{ countriesIndex.countries }} -->
+
+<div ng-repeat="country in countriesIndex.all track by $index" ng-model="countriesIndex.all" class="col-md-3 index-info-card">
+  <div class="dashImage caption index-country-item">
+    <a ui-sref="countriesShow({ id: group._id })">
+    <h2>{{ countriesIndex.countries.country.name}}</h2></a>
+</div>
+</div>

@@ -1,0 +1,43 @@
+<h1>Edit Your Profile</h1>
+<form ng-submit="usersEdit.update()">
+  <div>
+    <label for="name">Name</label>
+    <div>
+      <input type="text" name="name" ng-model="usersEdit.user.username">
+    </div>
+  </div>
+
+  <div>
+    <label for="image">Image</label>
+    <div>
+      <input type="text" name="image" ng-model="usersEdit.user.image">
+    </div>
+  </div>
+
+  <div>
+    <label for="twitter">Twitter</label>
+    <div>
+      <input type="text" name="twitter" ng-model="usersEdit.user.twitter">
+    </div>
+  </div>
+
+  <div>
+    <label for="facebook">Facebook</label>
+    <div>
+      <input type="text" name="facebook" ng-model="usersEdit.user.facebook">
+    </div>
+  </div>
+
+  <div>
+    <label for="about">About</label>
+    <div>
+      <textarea placeholder="Tell us about yourself!" name="about" ng-model="usersEdit.user.about"></textarea>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <input class="form-button-create" type="submit" value="Update User">
+    </div>
+  </div>
+</form>
