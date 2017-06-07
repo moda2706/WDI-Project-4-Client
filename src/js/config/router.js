@@ -24,7 +24,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     controllerAs: 'login'
   })
   .state('usersProfile', {
-    url: '/users', // called it profile to avoid confusion with usersShow
+    url: '/users/profile', // called it profile to avoid confusion with usersShow
     templateUrl: '/js/views/users/profile.html',
     controller: 'UsersProfileCtrl',
     controllerAs: 'usersProfile'

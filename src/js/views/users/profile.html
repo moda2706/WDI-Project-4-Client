@@ -1,13 +1,8 @@
-<div class="container">
-<!-- <div class="row ">
-  <h1>Users list</h1>
-  <ul>
-  <li ng-repeat="user in vm.users track by $index">{{ user.username }}</li>
-  <li ng-repeat="user in vm.users track by $index">{{ user.bio }}</li>
-</ul>
-</div> -->
-<div class="row">
-  <h2>Users near you</h2>
-  <p>{{ usersProfile.user}}</p>
-</div>
+<div>
+<h2>{{ usersProfile.user.username }} 's Profile</h2>
+<img ng-src="{{ usersProfile.user.image }}" alt="Profile Picture">
+<p>{{ usersProfile.user.twitter }}</p>
+<p>{{ usersProfile.user.facebook }}</p>
+<p>{{ usersProfile.user.about }}</p>
+  <!-- <p>{{ usersProfile.user}}</p> -->
 </div>
