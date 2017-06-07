@@ -94,6 +94,30 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: '/js/views/countries/show.html',
     controller: 'CountriesShowCtrl',
     controllerAs: 'countriesShow'
+  })
+  .state('stopsIndex', {
+    url: '/stops',
+    templateUrl: '/js/views/stops/index.html',
+    controller: 'StopsIndexCtrl',
+    controllerAs: 'stopsIndex'
+  })
+  .state('stopsEdit', {
+    url: '/stops/:id/edit',
+    templateUrl: '/js/views/stops/edit.html',
+    controller: 'StopsEditCtrl',
+    controllerAs: 'stopsEdit'
+  })
+  .state('stopsNew', {
+    url: '/stops/new',
+    templateUrl: '/js/views/stops/new.html',
+    controller: 'StopsNewCtrl',
+    controllerAs: 'stopsNew'
+  })
+  .state('stopsShow', {
+    url: '/stops/:id',
+    templateUrl: '/js/views/stops/show.html',
+    controller: 'StopsShowCtrl',
+    controllerAs: 'stopsShow'
   });
 
   $urlRouterProvider.otherwise('/');
