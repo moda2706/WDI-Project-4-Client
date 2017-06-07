@@ -70,6 +70,30 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: '/js/views/trips/show.html',
     controller: 'TripsShowCtrl',
     controllerAs: 'tripsShow'
+  })
+  .state('countriesIndex', {
+    url: '/countries',
+    templateUrl: '/js/views/countries/index.html',
+    controller: 'CountriesIndexCtrl',
+    controllerAs: 'countriesIndex'
+  })
+  .state('countriesEdit', {
+    url: '/countries/:id/edit',
+    templateUrl: '/js/views/countries/edit.html',
+    controller: 'CountriesEditCtrl',
+    controllerAs: 'countriesEdit'
+  })
+  .state('countriesNew', {
+    url: '/countries/new',
+    templateUrl: '/js/views/countries/new.html',
+    controller: 'CountriesNewCtrl',
+    controllerAs: 'countriesNew'
+  })
+  .state('countriesShow', {
+    url: '/countries/:id',
+    templateUrl: '/js/views/countries/show.html',
+    controller: 'CountriesShowCtrl',
+    controllerAs: 'countriesShow'
   });
 
   $urlRouterProvider.otherwise('/');
