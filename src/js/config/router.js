@@ -57,7 +57,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/trips/:id',
     templateUrl: '/js/views/trips/show.html',
     controller: 'TripsShowCtrl',
-    controllerAs: 'tripsShow'
+    controllerAs: 'vm'
   })
   .state('tripsEdit', {
     url: '/trips/:id/edit',
@@ -89,29 +89,17 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     controller: 'CountriesEditCtrl',
     controllerAs: 'countriesEdit'
   })
-  .state('stopsIndex', {
-    url: '/stops',
-    templateUrl: '/js/views/stops/index.html',
-    controller: 'StopsIndexCtrl',
-    controllerAs: 'stopsIndex'
-  })
   .state('stopsNew', {
-    url: '/stops/new',
+    url: '/trips/:id/stops/new',
     templateUrl: '/js/views/stops/new.html',
     controller: 'StopsNewCtrl',
-    controllerAs: 'stopsNew'
-  })
-  .state('stopsShow', {
-    url: '/stops/:id',
-    templateUrl: '/js/views/stops/show.html',
-    controller: 'StopsShowCtrl',
-    controllerAs: 'stopsShow'
+    controllerAs: 'vm'
   })
   .state('stopsEdit', {
     url: '/stops/:id/edit',
     templateUrl: '/js/views/stops/edit.html',
     controller: 'StopsEditCtrl',
-    controllerAs: 'stopsEdit'
+    controllerAs: 'vm'
   });
 
   $urlRouterProvider.otherwise('/');

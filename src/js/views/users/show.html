@@ -9,8 +9,10 @@
     </div>
   </div>
   <h2>My Trips</h2>
-  <ul>
-    <li ng-repeat="trip in usersShow.user.trips">{{ trip.name }}</li>
-  </ul>
   <button ui-sref="tripsNew">Add a Trip</button>
+  <ul>
+    <li ng-repeat="trip in usersShow.user.trips">
+      <p ui-sref="tripsShow({ id: trip.id })">{{ trip.name }}</p>
+    </li>
+  </ul>
 </div>
