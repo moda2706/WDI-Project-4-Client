@@ -2,17 +2,17 @@ angular
 .module('Wanderpal')
 .controller('TripsNewCtrl', TripsNewCtrl);
 
-TripsNewCtrl.$inject = ['$state', 'TripFactory'];
-function TripsNewCtrl($state, TripFactory) {
-  const vm = this;
-  vm.create = tripsCreate;
+TripsNewCtrl.$inject = ['$state', 'TripFactory', 'CurrentUserService'];
+function TripsNewCtrl($state, TripFactory, CurrentUserService) {
+  const vm  = this;
+  vm.create = create;
 
-  function tripsCreate() {
+  function create() {
     TripFactory
-    .save(vm.trip)
-    .$promise
-    .then(() => {
-      $state.go('tripsIndex');
-    });
+      .save(vm.trip)
+      .$promise
+      .then(() => {
+        $state.go('usersShow', { id: CurrentUserService.currentUser.id });
+      });
   }
 }

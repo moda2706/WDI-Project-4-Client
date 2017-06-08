@@ -11,8 +11,7 @@ function RegisterCtrl(UserFactory, CurrentUserService, $state) {
     .$promise
     .then(data => {
       CurrentUserService.getUser();
-      // $state.go('usersShow', { id: data.user.id });
-      $state.go('home');
+      $state.go('usersShow', { id: data.user.id });
     }, (err) => {
       console.log(err, 'error in the register controller');
     });

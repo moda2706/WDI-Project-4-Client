@@ -1,13 +1,16 @@
 <div class="container-fluid">
   <div class="row">
-
     <div class="profile-info col-md-4">
-      <img class="profile-image" src="{{ usersShow.user.image }}" alt="Profile Picture">
+      <img class="profile-image" src="{{ usersShow.user.image }}" alt="Profile Picture" width="300">
       <h1>{{ usersShow.user.username }}'s Profile</h1>
       <p>{{ usersShow.user.twitter }}</p>
       <p>{{ usersShow.user.facebook }}</p>
       <p>{{ usersShow.user.about }}</p>
     </div>
-
   </div>
+  <h2>My Trips</h2>
+  <ul>
+    <li ng-repeat="trip in usersShow.user.trips">{{ trip.name }}</li>
+  </ul>
+  <button ui-sref="tripsNew">Add a Trip</button>
 </div>
