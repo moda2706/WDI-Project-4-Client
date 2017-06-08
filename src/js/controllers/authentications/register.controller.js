@@ -9,9 +9,10 @@ function RegisterCtrl(UserFactory, CurrentUserService, $state) {
     UserFactory
     .register(vm.user)
     .$promise
-    .then(() => {
+    .then(data => {
       CurrentUserService.getUser();
-      $state.go('usersProfile');
+      // $state.go('usersShow', { id: data.user.id });
+      $state.go('home');
     }, (err) => {
       console.log(err, 'error in the register controller');
     });

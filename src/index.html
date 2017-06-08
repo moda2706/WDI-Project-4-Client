@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="Wanderpal">
-  <head>
-    <meta charset="utf-8">
-    <title>Wanderpal</title>
-    <base href="/" />
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-<!-- <body ng-controller="MainCtrl as main"> -->
+<head>
+  <meta charset="utf-8">
+  <title>Wanderpal</title>
+  <base href="/" />
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
 <body ng-controller="MainCtrl as main">
   <div>
     <nav>
       <ul>
+        <li >
+          <a ui-sref="home">Home</a>
+        </li>
         <li ng-hide="main.user">
           <a ui-sref="register">Sign Up</a>
         </li>
         <li ng-hide="main.user">
           <a ui-sref="login">Login</a>
         </li>
-        <li ng-show="main.user" class="logout-button">
-          <a ng-click="main.logout()">Logout</a>
-        </li>
         <li ng-show="main.user">
-          <a ui-sref="usersProfile">Profile</a>
+          <a ui-sref="usersShow({ id: main.user.id })">Profile</a>
         </li>
         <li ng-show="main.user">
           <a ui-sref="countriesShow">Countries</a>
         </li>
+        <li ng-show="main.user" class="logout-button">
+          <a ng-click="main.logout()">Logout</a>
+        </li>
       </ul>
     </nav>
-    <!-- <div ng-show="main.user" class="topNavBlock">
-      <a ui-sref="dashboard">
-        <img class="singed-in-logo" src="images/logo-signed-in.png">
-      </a>
-    </div> -->
     <main ui-view></main>
   </div>
 </body>
