@@ -27,25 +27,25 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/users/new',
     templateUrl: '/js/views/users/new.html',
     controller: 'UsersNewCtrl',
-    controllerAs: 'usersNew'
+    controllerAs: 'vm'
   })
   .state('usersShow', {
     url: '/users/:id',
     templateUrl: '/js/views/users/show.html',
     controller: 'UsersShowCtrl',
-    controllerAs: 'usersShow'
+    controllerAs: 'vm'
   })
   .state('usersEdit', {
     url: '/users/edit', // took out the :id as we're not using the id, using main.user
     templateUrl: '/js/views/users/edit.html',
     controller: 'UsersEditCtrl',
-    controllerAs: 'usersEdit'
+    controllerAs: 'vm'
   })
   .state('tripsIndex', {
     url: '/trips',
     templateUrl: '/js/views/trips/index.html',
     controller: 'TripsIndexCtrl',
-    controllerAs: 'tripsIndex'
+    controllerAs: 'vm'
   })
   .state('tripsNew', {
     url: '/trips/new',
@@ -57,51 +57,37 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/trips/:id',
     templateUrl: '/js/views/trips/show.html',
     controller: 'TripsShowCtrl',
-<<<<<<< HEAD
     controllerAs: 'vm'
   })
   .state('tripsEdit', {
     url: '/trips/:id/edit',
     templateUrl: '/js/views/trips/edit.html',
     controller: 'TripsEditCtrl',
-    controllerAs: 'tripsEdit'
-=======
-    controllerAs: 'tripsShow'
->>>>>>> ccc3bde2bbb10feb28fec6c0df5f837642ca1fcb
+    controllerAs: 'vm'
   })
   .state('countriesIndex', {
     url: '/countries',
     templateUrl: '/js/views/countries/index.html',
     controller: 'CountriesIndexCtrl',
-    controllerAs: 'countriesIndex'
+    controllerAs: 'vm'
   })
-<<<<<<< HEAD
-=======
-  .state('countriesEdit', {
-    url: '/countries/:id/edit',
-    templateUrl: '/js/views/countries/edit.html',
-    controller: 'CountriesEditCtrl',
-    controllerAs: 'countriesEdit'
-  })
->>>>>>> ccc3bde2bbb10feb28fec6c0df5f837642ca1fcb
   .state('countriesNew', {
     url: '/countries/new',
     templateUrl: '/js/views/countries/new.html',
     controller: 'CountriesNewCtrl',
-    controllerAs: 'countriesNew'
+    controllerAs: 'vm'
   })
   .state('countriesShow', {
     url: '/countries/:id',
     templateUrl: '/js/views/countries/show.html',
     controller: 'CountriesShowCtrl',
-    controllerAs: 'countriesShow'
-<<<<<<< HEAD
+    controllerAs: 'vm'
   })
   .state('countriesEdit', {
     url: '/countries/:id/edit',
     templateUrl: '/js/views/countries/edit.html',
     controller: 'CountriesEditCtrl',
-    controllerAs: 'countriesEdit'
+    controllerAs: 'vm'
   })
   .state('stopsNew', {
     url: '/trips/:id/stops/new',
@@ -114,8 +100,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: '/js/views/stops/edit.html',
     controller: 'StopsEditCtrl',
     controllerAs: 'vm'
-=======
->>>>>>> ccc3bde2bbb10feb28fec6c0df5f837642ca1fcb
   });
 
   $urlRouterProvider.otherwise('/');
