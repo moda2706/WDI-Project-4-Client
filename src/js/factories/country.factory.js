@@ -4,7 +4,7 @@ angular
 
 CountryFactory.$inject = ['API', '$resource'];
 function CountryFactory(API, $resource) {
-  return $resource(`${API}/countires/:id`,
+  return $resource(`${API}/countries/:id`,
     { id: '@_id'},
     { 'update': { method: 'PUT' } }
 );

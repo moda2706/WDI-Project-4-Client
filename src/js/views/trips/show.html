@@ -5,6 +5,7 @@
 <ul>
   <li ng-repeat="stop in vm.trip.stops">
     {{ stop.country.name }}
+    <a ui-sref="countriesShow({ id: stop.country.id })"><img class="profile-image" src="{{ stop.country.image }}" alt="Country Flag" width="300"></a>
     {{ stop.date }}
   </li>
 </ul>
