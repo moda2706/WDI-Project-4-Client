@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Angular Stack Setup</title>
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-  <body>
-  </body>
+<html ng-app="Wanderpal">
+<head>
+  <meta charset="utf-8">
+  <title>Wanderpal</title>
+  <base href="/" />
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
+  <div>
+    <nav>
+      <ul>
+        <li >
+          <a ui-sref="home">Home</a>
+        </li>
+        <li ng-hide="main.user">
+          <a ui-sref="register">Sign Up</a>
+        </li>
+        <li ng-hide="main.user">
+          <a ui-sref="login">Login</a>
+        </li>
+        <li ng-show="main.user">
+          <a ui-sref="usersShow({ id: main.user.id })">Profile</a>
+        </li>
+        <li ng-show="main.user">
+          <a ui-sref="countriesShow">Countries</a>
+        </li>
+        <li ng-show="main.user" class="logout-button">
+          <a ng-click="main.logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <main ui-view></main>
+  </div>
+</body>
 </html>

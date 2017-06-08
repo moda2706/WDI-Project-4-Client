@@ -1,0 +1,10 @@
+<h1>{{ vm.trip.name }}</h1>
+
+<h2>Current stops for {{ vm.trip.name }}</h2>
+<button ui-sref="stopsNew({id: vm.trip.id })">Add stop to {{ vm.trip.name }}</button>
+<ul>
+  <li ng-repeat="stop in vm.trip.stops">
+    {{ stop.country.name }}
+    {{ stop.date }}
+  </li>
+</ul>
