@@ -1,37 +1,37 @@
 <h1>Edit Your Profile</h1>
-<form ng-submit="usersEdit.update()">
+<form ng-submit="vm.update()">
   <div>
     <label for="name">Name</label>
     <div>
-      <input type="text" name="name" ng-model="usersEdit.user.username">
+      <input type="text" name="name" ng-model="vm.user.username">
     </div>
   </div>
 
   <div>
     <label for="image">Image</label>
     <div>
-      <input type="text" name="image" ng-model="usersEdit.user.image">
+      <input type="text" name="image" ng-model="vm.user.image">
     </div>
   </div>
 
   <div>
     <label for="twitter">Twitter</label>
     <div>
-      <input type="text" name="twitter" ng-model="usersEdit.user.twitter">
+      <input type="text" name="twitter" ng-model="vm.user.twitter">
     </div>
   </div>
 
   <div>
     <label for="facebook">Facebook</label>
     <div>
-      <input type="text" name="facebook" ng-model="usersEdit.user.facebook">
+      <input type="text" name="facebook" ng-model="vm.user.facebook">
     </div>
   </div>
 
   <div>
     <label for="about">About</label>
     <div>
-      <textarea placeholder="Tell us about yourself!" name="about" ng-model="usersEdit.user.about"></textarea>
+      <textarea placeholder="Tell us about yourself!" name="about" ng-model="vm.user.about"></textarea>
     </div>
   </div>
 

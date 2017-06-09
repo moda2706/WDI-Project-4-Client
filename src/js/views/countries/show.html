@@ -1,1 +1,23 @@
 <h1> {{ vm.country.name }} </h1>
+
+<div>
+  <div>
+    <img src="{{ vm.country.image }}" alt="Country Flag" width="300">
+    <p>{{ vm.country.continent }}</p>
+    <p>{{ vm.country.currency }}</p>
+    <p>{{ vm.country.language }}</p>
+    <p>{{ vm.country.description }}</p>
+  </div>
+</div>
+
+<h2>Previous visitors</h2>
+<div ng-repeat="stop in vm.before">
+  {{ stop.date }}
+  <img ng-src="{{ stop.trip.user.image }}">
+</div>
+
+<h2>Future visitors</h2>
+<div ng-repeat="stop in vm.after">
+  {{ stop.date }}
+  <img ng-src="{{ stop.trip.user.image }}">
+</div>

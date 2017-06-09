@@ -15,9 +15,9 @@ function UsersEditCtrl(UserFactory, $state, TokenService, CurrentUserService) {
     UserFactory
     .update({ id: vm.user.id }, vm.user)
     .$promise
-    .then(user => {
+    .then(() => {
       CurrentUserService.getUser();
-      $state.go('usersProfile', { id: user._id });
+      $state.go('usersShow', { id: CurrentUserService.currentUser.id });
     });
   }
 }

@@ -89,12 +89,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider) {
     controller: 'CountriesEditCtrl',
     controllerAs: 'vm'
   })
-  .state('stopsNew', {
-    url: '/trips/:id/stops/new',
-    templateUrl: '/js/views/stops/new.html',
-    controller: 'StopsNewCtrl',
-    controllerAs: 'vm'
-  })
   .state('stopsEdit', {
     url: '/stops/:id/edit',
     templateUrl: '/js/views/stops/edit.html',

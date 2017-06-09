@@ -2,8 +2,15 @@ angular
 .module('Wanderpal')
 .controller('CountriesShowCtrl', CountriesShowCtrl);
 
-CountriesShowCtrl.$inject = ['$stateParams', 'CountryFactory'];
-function CountriesShowCtrl($stateParams, CountryFactory) {
+CountriesShowCtrl.$inject = ['$stateParams', 'CountryFactory', '$filter'];
+function CountriesShowCtrl($stateParams, CountryFactory, $filter) {
   const vm = this;
-  vm.trip = CountryFactory.get($stateParams);
+  CountryFactory
+  .get($stateParams)
+  .$promise
+  .then(data => {
+    vm.country = data;
+    vm.before = $filter('before')(vm.country.stops);
+    vm.after = $filter('after')(vm.country.stops);
+  });
 }

@@ -4,4 +4,5 @@ angular
     'ui.router',
     'ngResource',
     'angular-jwt'
+    // 'ngMessages'
   ]);

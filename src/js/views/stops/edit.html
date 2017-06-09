@@ -1,0 +1,27 @@
+<h1>Edit Your Stop</h1>
+<form ng-submit="vm.update()">
+  <div>
+    <label for="name">Name</label>
+    <div>
+      <input type="text" name="name" ng-model="vm.stop.country.name">
+    </div>
+  </div>
+  <div>
+    <label for="image">Image</label>
+    <div>
+      <input type="text" name="image" ng-model="vm.stop.country.image">
+    </div>
+  </div>
+  <div>
+    <label for="date">Date</label>
+    <div>
+      <input type="text" name="date" ng-model="vm.stop.date">
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <input class="form-button-create" type="submit" value="Update Stop">
+    </div>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<h1>Edit Your Trip</h1>
+<form ng-submit="vm.update()">
+  <div>
+    <label for="name">Name</label>
+    <div>
+      <input type="text" name="name" ng-model="vm.trip.name">
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <input class="form-button-create" type="submit" value="Update Trip">
+    </div>
+  </div>
+</form>

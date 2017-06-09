@@ -2,8 +2,8 @@ angular
 .module('Wanderpal')
 .controller('TripsEditCtrl', TripsEditCtrl);
 
-TripsEditCtrl.$inject = ['$stateParams', '$state', 'TripFactory'];
-function TripsEditCtrl($stateParams, $state, TripFactory) {
+TripsEditCtrl.$inject = ['$stateParams', '$state', 'TripFactory', 'CurrentUserService'];
+function TripsEditCtrl($stateParams, $state, TripFactory, CurrentUserService) {
   const vm = this;
 
   vm.trip = TripFactory.get($stateParams);
@@ -14,7 +14,7 @@ function TripsEditCtrl($stateParams, $state, TripFactory) {
     .update({ id: $stateParams.id }, vm.trip)
     .$promise
     .then(()=> {
-      $state.go('tripsIndex');
+      $state.go('usersShow', { id: CurrentUserService.currentUser.id });
     });
   }
 }

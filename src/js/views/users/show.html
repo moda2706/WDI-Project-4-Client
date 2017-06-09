@@ -8,14 +8,13 @@
       <p>{{ vm.user.about }}</p>
     </div>
   </div>
-  <!-- <button class="user-edit-button" type="button" ui-sref="usersEdit({ id: usersProfile.user._id })">Edit</button> -->
+  <button type="button" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
   <h2>My Trips</h2>
   <button ui-sref="tripsNew">Add a Trip</button>
   <ul>
     <li ng-repeat="trip in vm.user.trips">
       <p ui-sref="tripsShow({ id: trip.id })">{{ trip.name }}</p>
-      <!-- <p>{{ trip.stops }} </p> -->
-      <!-- <p ng-repeat="stop in vm.trip.stops">{{stop.country.name}}</p> -->
+      <p ng-repeat="stop in trip.stops">{{stop}}</p>
     </li>
   </ul>
 </div>
