@@ -11,6 +11,9 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- font -->
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   <base href="/" />
   <!-- inject:js -->
   <!-- endinject -->
@@ -18,51 +21,33 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  <div>
-    <ol class="breadcrumb">
-      <li >
-        <a ui-sref="home">Home</a>
-      </li>
-      <li ng-hide="main.user">
-        <a ui-sref="register">Sign Up</a>
-      </li>
-      <li ng-hide="main.user">
-        <a ui-sref="login">Login</a>
-      </li>
-      <li ng-show="main.user">
-        <a ui-sref="usersShow({ id: main.user.id })">Profile</a>
-      </li>
-      <li ng-show="main.user">
-        <a ui-sref="countriesShow">Countries</a>
-      </li>
-      <li ng-show="main.user" class="logout-button">
-        <a ng-click="main.logout()">Logout</a>
-      </li>
 
-</ol>
-    <!-- <nav>
-      <ul>
-        <li >
-          <a ui-sref="home">Home</a>
-        </li>
-        <li ng-hide="main.user">
-          <a ui-sref="register">Sign Up</a>
-        </li>
-        <li ng-hide="main.user">
-          <a ui-sref="login">Login</a>
-        </li>
-        <li ng-show="main.user">
-          <a ui-sref="usersShow({ id: main.user.id })">Profile</a>
-        </li>
-        <li ng-show="main.user">
-          <a ui-sref="countriesShow">Countries</a>
-        </li>
-        <li ng-show="main.user" class="logout-button">
-          <a ng-click="main.logout()">Logout</a>
-        </li>
-      </ul>
-    </nav> -->
-    <main ui-view></main>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/">WanderPal</a>
   </div>
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-link"><a ui-sref="home">Home</a></li>
+      <li class="nav-link" ng-hide="main.user"><a ui-sref="register">Register</a></li>
+      <li class="nav-link" ng-hide="main.user"><a ui-sref="login">Login</a></li>
+      <li class="nav-link" ng-show="main.user"><a ui-sref="usersShow({ id: main.user.id })">Profile</a></li>
+      <li class="nav-link" ng-show="main.user" id="logout-button"><a ng-click="main.logout()">Logout</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<main ui-view></main>
+
 </body>
 </html>

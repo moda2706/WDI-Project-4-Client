@@ -1,14 +1,38 @@
-<h1>{{ vm.trip.name }}</h1>
+<div class="tripInfo">
 
-<button type="button" ui-sref="tripsEdit({ id: vm.trip.id })">Edit</button>
+  <div id="container">
+    <img class="tripMainImage" src="{{ vm.trip.image }}" alt="Trip Image">
+    <div class="tripTitleName">
+      <h1 class="tripShowName">{{ vm.trip.name }}</h1>
+    </div>
+  </div>
 
-<h2>Current stops for {{ vm.trip.name }}</h2>
-<button ui-sref="stopsNew({id: vm.trip.id })">Add stop to {{ vm.trip.name }}</button>
-<button type="button" ui-sref="stopsEdit({ id: vm.trip.id })">Edit</button>
-<ul>
-  <li ng-repeat="stop in vm.trip.stops">
-    {{ stop.country.name }}
-    <a ui-sref="countriesShow({ id: stop.country.id })"><img class="profile-image" src="{{ stop.country.image }}" alt="Country Flag" width="300"></a>
-    {{ stop.date }}
-  </li>
-</ul>
+</div>
+
+<div class="stops">
+
+<div class="stopsTitle">
+  <h3>Current stops for {{ vm.trip.name }}</h3>
+</div>
+
+<div class="stopsAddBtn">
+  <button class="stopsBtnAdd" ui-sref="stopsNew({id: vm.trip.id })">Add stop</button>
+</div>
+
+<div class="stopsEditBtn">
+  <button class="stopsBtnEdit" type="button" ui-sref="stopsEdit({ id: vm.trip.id })">Edit</button>
+</div>
+
+
+<div class="row">
+  <div ng-repeat="stop in vm.trip.stops" class="col-md-2">
+
+    <div class="container">
+      <a ui-sref="countriesShow({ id: stop.country.id })"><img class="countryFlag" src="{{ stop.country.image }}" alt="Country Flag" width="300"></a>
+
+      <p class="stopText">{{ stop.country.name }} {{ stop.date | date:  "dd.MM.y"  }}</p>
+      <!-- <p class="stopDate">{{ stop.date }}</p> -->
+  </div>
+</div>
+</div>
+</div>

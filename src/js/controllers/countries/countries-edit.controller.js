@@ -14,7 +14,7 @@ function CountriesEditCtrl($stateParams, $state, CountryFactory) {
     .update({ id: $stateParams.id }, vm.country)
     .$promise
     .then(()=> {
-      $state.go('countriesIndex');
+      $state.go('vm.countriesShow');
     });
   }
 }

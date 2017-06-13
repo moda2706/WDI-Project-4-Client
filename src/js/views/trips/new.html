@@ -1,8 +1,14 @@
 <div ng-hide='vm.trip.id'>
-  <h1>New Trip</h1>
-  <form ng-submit="vm.create()">
-    <label for="name">Name:</label>
-    <input type="text" name="name" ng-model="vm.trip.name">
+
+  <div class="addTripTitle">
+    <h1>New Trip</h1>
+  </div>
+
+  <form class="tripAdd" ng-submit="vm.create()">
+    <div class="form-group"><label for="name">Name:</label>
+    <input type="text" name="name" ng-model="vm.trip.name"></div>
+    <div><label for="image">Image:</label>
+    <input type="text" name="image" ng-model="vm.trip.image"></div>
     <input type="submit" name="" value="Create Trip">
   </form>
 </div>

@@ -1,9 +1,6 @@
-<header>
-<a href="home">Logo
-</a>
-<!-- <h1>Register</h1> -->
-</header>
-<form class="register" ng-submit="register.register()" name="register.registerForm" novalidate>
+<div class="register">
+
+<form class="registerForm" ng-submit="register.register()" name="register.registerForm" novalidate>
   <div class="form-group">
     <input class="form-control" type="text" name="username" ng-model="register.user.username" placeholder="Username" required>
   </div>
@@ -45,3 +42,4 @@
     </div>
   <input class="form-button" type="submit" value="Sign Up" />
 </form>
+</div>

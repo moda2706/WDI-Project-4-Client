@@ -1,20 +1,46 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="profile-info col-md-4">
-      <img class="profile-image" src="{{ vm.user.image }}" alt="Profile Picture" width="300">
-      <h1>{{ vm.user.username }}'s Profile</h1>
-      <p>{{ vm.user.twitter }}</p>
-      <p>{{ vm.user.facebook }}</p>
+<div>
+
+<div class="profileInfo">
+  <div class="profileTitle">
+    <h1>{{ vm.user.username }}</h1>
+  </div>
+
+  <div class="userBtn">
+    <button class="editUserBtn" type="button" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
+  </div>
+</div>
+
+  <div class="profileInfo">
+    <div class="profileImage">
+      <img class="img-circle" src="{{ vm.user.image }}" alt="Profile Picture">
+    </div>
+    <div class="profileDetails">
       <p>{{ vm.user.about }}</p>
+      <img class="twitterIcon" src="http://i.imgur.com/O9TEa67.png" alt="" ng-click="{{vm.user.twitter}}">
+      <a ui-sref="{{vm.user.facebook}}"><img class="twitterIcon" src="http://i.imgur.com/cX6xlM6.png" alt=""></a>
     </div>
   </div>
-  <button type="button" ui-sref="usersEdit({ id: usersShow.user.id })">Edit</button>
-  <h2>My Trips</h2>
-  <button ui-sref="tripsNew">Add a Trip</button>
-  <ul>
-    <li ng-repeat="trip in vm.user.trips">
-      <p ui-sref="tripsShow({ id: trip.id })">{{ trip.name }}</p>
-      <p ng-repeat="stop in trip.stops">{{stop}}</p>
-    </li>
-  </ul>
+
+
+  <div class="trips">
+    <div class="tripTitle">
+      <h2>My Trips</h2>
+    </div>
+
+    <div class="tripBtnAdd">
+      <button class="addTripBtn" ui-sref="tripsNew">Add a Trip</button>
+    </div>
+
+    <div class="row">
+      <div ng-repeat="trip in vm.user.trips" class="col-md-2">
+
+        <div class="container">
+        <a ui-sref="tripsShow({ id: trip.id })"><img class="tripImage" src="{{ trip.image }}" alt="tripImage"></a>
+        <a ui-sref="tripsShow({ id: trip.id })"><p class="tripText">{{ trip.name }}</p></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
