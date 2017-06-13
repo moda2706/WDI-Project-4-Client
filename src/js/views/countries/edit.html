@@ -1,29 +1,19 @@
-<h1>Edit Your Trip</h1>
-<form ng-submit="vm.update()">
-  <div>
-    <label for="name">Name</label>
-    <div>
-      <input type="text" name="name" ng-model="vm.country.name">
-    </div>
+<form class="editCountry" ng-submit="vm.update()">
+  <div class="form-group">
+    <input class="form-control" type="text" name="name" ng-model="vm.country.name">
   </div>
 
-  <div>
-    <label for="Description">Description</label>
-    <div>
-      <input type="text" name="description" ng-model="vm.country.description">
-    </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="description" ng-model="vm.country.description">
   </div>
 
-  <div>
-    <label for="image">Image</label>
-    <div>
-      <input type="text" name="image" ng-model="vm.country.image">
-    </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="image" ng-model="vm.country.image">
   </div>
 
   <div>
     <div>
-      <input class="form-button-create" type="submit" value="Update Country">
+      <input class="form-button" type="submit" value="Update Country">
     </div>
   </div>
 </form>

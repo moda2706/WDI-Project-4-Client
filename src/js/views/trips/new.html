@@ -1,27 +1,27 @@
 <div ng-hide='vm.trip.id'>
 
-  <div class="addTripTitle">
+  <!-- <div class="addTripTitle">
     <h1>New Trip</h1>
-  </div>
+  </div> -->
 
   <form class="tripAdd" ng-submit="vm.create()">
     <div class="form-group"><label for="name">Name:</label>
-    <input type="text" name="name" ng-model="vm.trip.name"></div>
-    <div><label for="image">Image:</label>
-    <input type="text" name="image" ng-model="vm.trip.image"></div>
-    <input type="submit" name="" value="Create Trip">
+    <input class="form-control" type="text" name="name" ng-model="vm.trip.name"></div>
+    <div class="form-group"><label for="image">Image:</label>
+    <input class="form-control" type="text" name="image" ng-model="vm.trip.image"></div>
+    <input class="form-button" type="submit" name="" value="Create Trip">
   </form>
 </div>
 
-<div ng-show='vm.trip.id'>
-  <h1>Add Stop</h1>
+<div class="createStopForm" ng-show='vm.trip.id'>
   <div ng-repeat="stop in vm.trip.stops track by $index">
     <form ng-submit="vm.stopsCreate(vm.trip, stop)">
-      <label for="country">Country</label>
+      <div class="form-group">
+        <label for="country">Country</label>
       <!-- <select ng-model="vm.trip.stops[$index].country" ng-options="country.id as country.name for country in vm.countries track by country.id"> -->
       <select ng-model="stop.country" ng-options="country as country.name for country in vm.countries track by country.id">
         <option value="">Please Select a Country</option>
-      </select>
+      </select></div>
 
       <label for="name">Date</label>
       <!-- <input type="date" name="date" ng-model="vm.trip.stops[$index].date"> -->
@@ -40,8 +40,8 @@
     <label for="name">Date</label>
     <input type="date" name="date" ng-model="vm.stop.date">
 
-    <input type="submit" name="" value="Add Stop">
+    <input  class="form-button" type="submit" name="" value="Add Stop">
   </form>
 
-  <button class="btn btn-default" ng-click="vm.finish()">Finish</button>
+  <button class="form-button" ng-click="vm.finish()">Finish</button>
 </div>

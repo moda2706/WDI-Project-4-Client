@@ -202,7 +202,7 @@ z-index: -100;
   background: #000080;
   color: #fff;
   margin-top: -50px;
-  margin-right: 150px;
+  margin-right: 170px;
   width: 80px;
   height: 40px;
   border: 0px;
@@ -501,4 +501,46 @@ z-index: -100;
 // <---Add Trip Form--->
 .addTripTitle{
   margin-left: 150px;
+}
+
+.tripAdd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.createStopForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.editProfile{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.editStop{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.editTrip{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.editCountry{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
